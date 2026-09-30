@@ -1,0 +1,36 @@
+:root{--bg:#0f1720;--card:#182430;--ink:#e6edf3;--muted:#93a1b0;--accent:#2dd4bf;--line:#26333f}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.topbar{display:flex;align-items:center;gap:16px;padding:12px 20px;background:#0b1218;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;font-size:18px;color:var(--accent)}
+.tagline{color:var(--muted);font-size:13px;flex:1}
+.session{font-size:13px;color:var(--muted)}
+.session button{margin-left:8px}
+.container{max-width:1000px;margin:20px auto;padding:0 16px}
+.view{display:block}
+.hidden{display:none!important}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+.card h2{margin:0 0 10px;font-size:16px}
+.card h3{margin:0 0 6px;font-size:13px;color:var(--muted)}
+label{display:block;font-size:13px;color:var(--muted);margin:8px 0}
+input,select,textarea{width:100%;margin-top:4px;padding:9px;border-radius:8px;border:1px solid var(--line);background:#0d1620;color:var(--ink);font-size:14px}
+button{margin-top:10px;padding:9px 14px;border:0;border-radius:8px;background:var(--accent);color:#03201c;font-weight:600;cursor:pointer}
+button.secondary{background:#233240;color:var(--ink)}
+button:hover{opacity:.9}
+.muted{color:var(--muted)}
+.msg{font-size:13px;min-height:18px;color:#f7a8a8}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.item{border:1px solid var(--line);border-radius:8px;padding:10px;margin:8px 0}
+.item .meta{font-size:12px;color:var(--muted)}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;background:#233240;color:var(--ink)}
+.badge.prescribed{background:#0f3b30;color:var(--accent)}
+.badge.lab_requested{background:#3b2f0f;color:#f0d17a}
+.badge.confirmed{background:#0f3b30;color:var(--accent)}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.videos video{width:100%;border-radius:10px;background:#000;aspect-ratio:4/3}
+.thread{max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:8px;padding:8px;margin:8px 0}
+.bubble{font-size:13px;margin:4px 0}
+.bubble b{color:var(--accent)}
+.foot{text-align:center;padding:18px;font-size:12px}

@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "anon_handle": "anon-eebe88cd",
+      "role": "patient",
+      "pass_hash": "$2b$10$o5JdkukQIopoE59ga3Sas.J95jZVcgtWW11vFIhKCQYVh35UaHYdu",
+      "display_name": null,
+      "specialty": null,
+      "id": 1,
+      "created_at": "2026-09-30 19:39:46"
+    },
+    {
+      "anon_handle": "anon-7c59967a",
+      "role": "practitioner",
+      "pass_hash": "$2b$10$UgMuSxAisPsALVZ2x5djWOUM26XnNTANgJMMzn/piD1Nv48pyRrWy",
+      "display_name": null,
+      "specialty": null,
+      "id": 2,
+      "created_at": "2026-09-30 19:42:23"
+    }
+  ],
+  "cases": [
+    {
+      "patient_id": 1,
+      "practitioner_id": 2,
+      "category": "sexual-health",
+      "symptoms": "I have a white fluid coming from my penis",
+      "answers": null,
+      "status": "in_review",
+      "updated_at": "2026-09-30 19:46:31",
+      "id": 1,
+      "created_at": "2026-09-30 19:41:03"
+    }
+  ],
+  "prescriptions": [
+    {
+      "case_id": 1,
+      "practitioner_id": 2,
+      "medication": "paracetamol 500mg",
+      "dosage": "30",
+      "instructions": "2 tablets per day in 15 days",
+      "id": 1,
+      "created_at": "2026-09-30 19:44:29"
+    },
+    {
+      "case_id": 1,
+      "practitioner_id": 2,
+      "medication": "mebendanzole",
+      "dosage": "30",
+      "instructions": "2 tablets per day in 15 days",
+      "id": 2,
+      "created_at": "2026-09-30 19:46:31"
+    }
+  ],
+  "lab_requests": [],
+  "appointments": [],
+  "messages": [
+    {
+      "thread_type": "case",
+      "thread_id": 1,
+      "sender_id": 1,
+      "body": "done",
+      "id": 1,
+      "created_at": "2026-09-30 19:50:42"
+    }
+  ],
+  "seq": {
+    "users": 2,
+    "cases": 1,
+    "prescriptions": 2,
+    "messages": 1
+  }
+}

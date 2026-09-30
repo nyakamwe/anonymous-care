@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnonCare — Private Telehealth</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">⚕ AnonCare</div>
+    <div class="tagline">Private, anonymous care — no name required</div>
+    <div id="session" class="session"></div>
+  </header>
+
+  <main id="app" class="container">
+    <!-- Auth view -->
+    <section id="view-auth" class="view">
+      <div class="grid2">
+        <div class="card">
+          <h2>Create an anonymous account</h2>
+          <p class="muted">Patients don't need a real name, email, or phone.
+            Leave the handle blank to auto-generate one. Save your handle &amp;
+            passphrase — they are the only way back into your record.</p>
+          <label>Role
+            <select id="reg-role">
+              <option value="patient">Patient</option>
+              <option value="practitioner">Practitioner (doctor)</option>
+              <option value="therapist">Therapist (counsellor)</option>
+            </select>
+          </label>
+          <label>Handle (optional) <input id="reg-handle" placeholder="auto-generated if blank" /></label>
+          <label>Passphrase (min 8 chars) <input id="reg-pass" type="password" /></label>
+          <div id="clinician-fields" class="hidden">
+            <label>Display name <input id="reg-name" placeholder="Dr. A. Smith" /></label>
+            <label>Specialty <input id="reg-spec" placeholder="Sexual health / Counselling" /></label>
+          </div>
+          <button id="btn-register">Register</button>
+        </div>
+        <div class="card">
+          <h2>Log in</h2>
+          <label>Handle <input id="login-handle" placeholder="anon-xxxxxxxx" /></label>
+          <label>Passphrase <input id="login-pass" type="password" /></label>
+          <button id="btn-login">Log in</button>
+          <p id="auth-msg" class="msg"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patient view -->
+    <section id="view-patient" class="view hidden">
+      <div class="grid2">
+        <div class="card">
+          <h2>Start a consultation</h2>
+          <label>Concern
+            <select id="case-category">
+              <option value="sexual-health">Sexual health</option>
+              <option value="general">General illness</option>
+              <option value="mental-health">Mental health</option>
+            </select>
+          </label>
+          <label>Describe your symptoms
+            <textarea id="case-symptoms" rows="4" placeholder="e.g. painless sore, rash on palms, fatigue..."></textarea></label>
+          <button id="btn-new-case">Submit consultation</button>
+        </div>
+        <div class="card">
+          <h2>Book counselling</h2>
+          <label>Therapist <select id="appt-therapist"></select></label>
+          <label>Date &amp; time <input id="appt-time" type="datetime-local" /></label>
+          <label>Note (optional) <input id="appt-note" /></label>
+          <button id="btn-book">Request session</button>
+        </div>
+      </div>
+      <div class="card"><h2>My consultations</h2><div id="patient-cases"></div></div>
+      <div class="card"><h2>My counselling sessions</h2><div id="patient-appts"></div></div>
+    </section>
+
+    <!-- Practitioner view -->
+    <section id="view-practitioner" class="view hidden">
+      <div class="card"><h2>Consultation queue</h2><div id="prac-cases"></div></div>
+      <div id="case-detail" class="card hidden"></div>
+    </section>
+
+    <!-- Therapist view -->
+    <section id="view-therapist" class="view hidden">
+      <div class="card"><h2>My sessions</h2><div id="ther-appts"></div></div>
+    </section>
+
+    <!-- Video room (shared) -->
+    <section id="view-room" class="view hidden">
+      <div class="card">
+        <h2>Live session <span id="room-label" class="muted"></span></h2>
+        <div class="videos">
+          <div><h3>You</h3><video id="local-video" autoplay muted playsinline></video></div>
+          <div><h3>Peer</h3><video id="remote-video" autoplay playsinline></video></div>
+        </div>
+        <div class="row">
+          <button id="btn-join-call">Start / Join call</button>
+          <button id="btn-leave-call" class="secondary">Leave</button>
+          <button id="btn-back" class="secondary">Back</button>
+        </div>
+        <p id="room-status" class="msg"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot muted">MVP demo — not for real clinical use. See notes on compliance &amp; security.</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
